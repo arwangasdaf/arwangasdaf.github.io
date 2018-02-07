@@ -11,22 +11,22 @@
     
 
     
-    <meta name="description" content="倒排索引这里先简单介绍一下倒排索引的概念。  这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。 左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting L">
+    <meta name="description" content="1、倒排索引这里先简单介绍一下倒排索引的概念。  这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。 左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java 实现倒排索引">
 <meta property="og:url" content="http://yoursite.com/2018/02/01/java-实现倒排索引/index.html">
 <meta property="og:site_name" content="wangtao">
-<meta property="og:description" content="倒排索引这里先简单介绍一下倒排索引的概念。  这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。 左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting L">
+<meta property="og:description" content="1、倒排索引这里先简单介绍一下倒排索引的概念。  这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。 左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting">
 <meta property="og:image" content="http://yoursite.com/image/1/index.jpg">
 <meta property="og:image" content="http://yoursite.com/image/1/search.jpg">
 <meta property="og:image" content="http://yoursite.com/image/1/tf.png">
 <meta property="og:image" content="http://yoursite.com/image/1/IDF.png">
 <meta property="og:image" content="http://yoursite.com/image/1/TFIDF.png">
-<meta property="og:updated_time" content="2018-02-07T11:58:28.000Z">
+<meta property="og:updated_time" content="2018-02-07T12:00:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java 实现倒排索引">
-<meta name="twitter:description" content="倒排索引这里先简单介绍一下倒排索引的概念。  这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。 左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting L">
+<meta name="twitter:description" content="1、倒排索引这里先简单介绍一下倒排索引的概念。  这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。 左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting">
 <meta name="twitter:image" content="http://yoursite.com/image/1/index.jpg">
 
     
@@ -55,7 +55,7 @@
 				<h1 class="site-name"><a href="/" title="wangtao">wangtao</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -71,7 +71,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -94,30 +94,30 @@
 		<a href="/about" title="wangtao" target="_blank" itemprop="author">wangtao</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-01T02:49:00.000Z" itemprop="datePublished"> 發表於 2018-02-01</time>
+    <time datetime="2018-02-01T02:49:00.000Z" itemprop="datePublished"> Published 2018-02-01</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#倒排索引"><span class="toc-number">1.</span> <span class="toc-text">倒排索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TF-IDF"><span class="toc-number">2.</span> <span class="toc-text">TF-IDF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java实现"><span class="toc-number">3.</span> <span class="toc-text">java实现</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、倒排索引"><span class="toc-number">1.</span> <span class="toc-text">1、倒排索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、TF-IDF"><span class="toc-number">2.</span> <span class="toc-text">2、TF-IDF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、java实现"><span class="toc-number">3.</span> <span class="toc-text">3、java实现</span></a></li></ol>
 		
 		</div>
 		
-		<h4 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h4><p>这里先简单介绍一下倒排索引的概念。</p>
+		<h4 id="1、倒排索引"><a href="#1、倒排索引" class="headerlink" title="1、倒排索引"></a>1、倒排索引</h4><p>这里先简单介绍一下倒排索引的概念。</p>
 <p><img src="/image/1/index.jpg" style="display:block;margin:auto"></p>
 <p>这里举一个简单的例子，如上图所示，我们有 100 个文档，每个文档里包含很多个单词，倒排索引的原理是为每个单词及其每个单词出现的次数建立关系，每个单词可能会出现多次，这样在索引表里的每一项就会是单词和文档链表的集合。</p>
 <p>左边保存的是一系列字符串，称为词典。每个字符串都指向包含此字符串的文档(Document)链表，此文档链表称为倒排表(Posting List)。<br>有了索引，便使保存的信息和要搜索的信息一致，可以大大加快搜索的速度。<br>比如说，我们要寻找既包含字符串“lucene”又包含字符串“solr”的文档，我们只需要以下几步：<br><br>1、找出包含“lucene”的文档链表<br><br>2、找出包含“solr”的文档链表<br><br>3、合并链表，找出既包含“lucene”又包含“solr”的文档。<br></p>
 <p>如下图所示：</p>
 <p><img src="/image/1/search.jpg" style="display:block;margin:auto"></p>
 <p>全文检索在建立索引的过程会耗费一定的时间，但它的优势为一次索引，多次使用。</p>
-<h4 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h4><p>TF-IDF 由两部分组成，TF 是单词的频率，IDF 是逆文档频率，用来反映单词的重要程度。计算公示如下：<br></p>
+<h4 id="2、TF-IDF"><a href="#2、TF-IDF" class="headerlink" title="2、TF-IDF"></a>2、TF-IDF</h4><p>TF-IDF 由两部分组成，TF 是单词的频率，IDF 是逆文档频率，用来反映单词的重要程度。计算公示如下：<br></p>
 <p>TF计算公式如下：<br><img src="/image/1/tf.png" style="display:block;margin:auto"><br>IDF计算公式如下：<br><img src="/image/1/IDF.png" style="display:block;margin:auto"><br>TF-IDF计算公式如下<br><img src="/image/1/TFIDF.png" style="display:block;margin:auto"></p>
-<p>这里推荐阮一峰的两篇博客：<br><br><a href="http://www.ruanyifeng.com/blog/2013/03/tf-idf.html" target="_blank" rel="noopener">TF-IDF与余弦相似性的应用（一）：自动提取关键词</a><br><br><a href="http://www.ruanyifeng.com/blog/2013/03/cosine_similarity.html" target="_blank" rel="noopener">TF-IDF与余弦相似性的应用（二）：找出相似文章</a></p>
-<h4 id="java实现"><a href="#java实现" class="headerlink" title="java实现"></a>java实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import java.io.BufferedReader;  </span><br><span class="line">import java.io.File;  </span><br><span class="line">import java.io.FileReader;  </span><br><span class="line">import java.io.IOException;  </span><br><span class="line">import java.util.ArrayList;  </span><br><span class="line">import java.util.HashMap;  </span><br><span class="line">import java.util.Map;  </span><br><span class="line"> </span><br><span class="line">public class IntertedIndex &#123;  </span><br><span class="line">    private Map&lt;String, ArrayList&lt;String&gt;&gt; map=new HashMap&lt;&gt;();  </span><br><span class="line">    private ArrayList&lt;String&gt; list;  </span><br><span class="line">    private Map&lt;String, Integer&gt; nums=new HashMap&lt;&gt;();  </span><br><span class="line">      </span><br><span class="line">    public void CreateIndex(String filepath)&#123;  </span><br><span class="line">        String[] words = null;  </span><br><span class="line">        try &#123;        </span><br><span class="line">            File file=new File(filepath);  </span><br><span class="line">            BufferedReader reader=new BufferedReader(new FileReader(file));  </span><br><span class="line">            String s=null;  </span><br><span class="line">            while((s=reader.readLine())!=null)&#123;  </span><br><span class="line">                //获取单词  </span><br><span class="line">                words=s.split(&quot; &quot;);            </span><br><span class="line">            &#125;  </span><br><span class="line">          </span><br><span class="line">            for (String string : words) &#123;  </span><br><span class="line">                if (!map.containsKey(string)) &#123;  </span><br><span class="line">                    list=new ArrayList&lt;String&gt;();  </span><br><span class="line">                    list.add(filepath);  </span><br><span class="line">                    map.put(string, list);  </span><br><span class="line">                    nums.put(string, 1);  </span><br><span class="line">                &#125;else &#123;  </span><br><span class="line">                    list=map.get(string);  </span><br><span class="line">                    //如果没有包含过此文件名，则把文件名放入  </span><br><span class="line">                    if (!list.contains(filepath)) &#123;  </span><br><span class="line">                        list.add(filepath);  </span><br><span class="line">                    &#125;  </span><br><span class="line">                    //文件总词频数目  </span><br><span class="line">                    int count=nums.get(string)+1;  </span><br><span class="line">                    nums.put(string, count);  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">            reader.close();           </span><br><span class="line">        &#125; catch (IOException e) &#123;        </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;            </span><br><span class="line">    &#125;  </span><br><span class="line">    </span><br><span class="line">    public static void main(String[] args) &#123;  </span><br><span class="line">        IntertedIndex index=new IntertedIndex();           </span><br><span class="line">        for(int i=1;i&lt;=3;i++)&#123;  </span><br><span class="line">            String path=&quot;E:\\data\\&quot;+i+&quot;.txt&quot;;  </span><br><span class="line">            index.CreateIndex(path);  </span><br><span class="line">        &#125;  </span><br><span class="line">        for (Map.Entry&lt;String, ArrayList&lt;String&gt;&gt; map : index.map.entrySet()) &#123;  </span><br><span class="line">            System.out.println(map.getKey()+&quot;:&quot;+map.getValue());  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        for (Map.Entry&lt;String, Integer&gt; num : index.nums.entrySet()) &#123;  </span><br><span class="line">            System.out.println(num.getKey()+&quot;:&quot;+num.getValue());  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里推荐阮一峰的两篇博客：<br><br><a href="http://www.ruanyifeng.com/blog/2013/03/tf-idf.html" target="_blank" rel="noopener">TF-IDF与余弦相似性的应用（一）：自动提取关键词</a><br><br><a href="http://www.ruanyifeng.com/blog/2013/03/cosine_similarity.html" target="_blank" rel="noopener">TF-IDF与余弦相似性的应用（二）：找出相似文章</a><br></p>
+<h4 id="3、java实现"><a href="#3、java实现" class="headerlink" title="3、java实现"></a>3、java实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import java.io.BufferedReader;  </span><br><span class="line">import java.io.File;  </span><br><span class="line">import java.io.FileReader;  </span><br><span class="line">import java.io.IOException;  </span><br><span class="line">import java.util.ArrayList;  </span><br><span class="line">import java.util.HashMap;  </span><br><span class="line">import java.util.Map;  </span><br><span class="line"> </span><br><span class="line">public class IntertedIndex &#123;  </span><br><span class="line">    private Map&lt;String, ArrayList&lt;String&gt;&gt; map=new HashMap&lt;&gt;();  </span><br><span class="line">    private ArrayList&lt;String&gt; list;  </span><br><span class="line">    private Map&lt;String, Integer&gt; nums=new HashMap&lt;&gt;();  </span><br><span class="line">      </span><br><span class="line">    public void CreateIndex(String filepath)&#123;  </span><br><span class="line">        String[] words = null;  </span><br><span class="line">        try &#123;        </span><br><span class="line">            File file=new File(filepath);  </span><br><span class="line">            BufferedReader reader=new BufferedReader(new FileReader(file));  </span><br><span class="line">            String s=null;  </span><br><span class="line">            while((s=reader.readLine())!=null)&#123;  </span><br><span class="line">                //获取单词  </span><br><span class="line">                words=s.split(&quot; &quot;);            </span><br><span class="line">            &#125;  </span><br><span class="line">          </span><br><span class="line">            for (String string : words) &#123;  </span><br><span class="line">                if (!map.containsKey(string)) &#123;  </span><br><span class="line">                    list=new ArrayList&lt;String&gt;();  </span><br><span class="line">                    list.add(filepath);  </span><br><span class="line">                    map.put(string, list);  </span><br><span class="line">                    nums.put(string, 1);  </span><br><span class="line">                &#125;else &#123;  </span><br><span class="line">                    list=map.get(string);  </span><br><span class="line">                    //如果没有包含过此文件名，则把文件名放入  </span><br><span class="line">                    if (!list.contains(filepath)) &#123;  </span><br><span class="line">                        list.add(filepath);  </span><br><span class="line">                    &#125;  </span><br><span class="line">                    //文件总词频数目  </span><br><span class="line">                    int count=nums.get(string)+1;  </span><br><span class="line">                    nums.put(string, count);  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">            reader.close();           </span><br><span class="line">        &#125; catch (IOException e) &#123;        </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;            </span><br><span class="line">    &#125;  </span><br><span class="line">    </span><br><span class="line">    public static void main(String[] args) &#123;  </span><br><span class="line">        IntertedIndex index=new IntertedIndex();           </span><br><span class="line">        for(int i=1;i&lt;=3;i++)&#123;  </span><br><span class="line">            String path=&quot;E:\\data\\&quot;+i+&quot;.txt&quot;;  </span><br><span class="line">            index.CreateIndex(path);  </span><br><span class="line">        &#125;  </span><br><span class="line">        for (Map.Entry&lt;String, ArrayList&lt;String&gt;&gt; map : index.map.entrySet()) &#123;  </span><br><span class="line">            System.out.println(map.getKey()+&quot;:&quot;+map.getValue());  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        for (Map.Entry&lt;String, Integer&gt; num : index.nums.entrySet()) &#123;  </span><br><span class="line">            System.out.println(num.getKey()+&quot;:&quot;+num.getValue());  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该实现参考：<a href="http://blog.csdn.net/chen19920219/article/details/71091314" target="_blank" rel="noopener">java实现倒排索引</a></p>
   
 	</div>
@@ -170,17 +170,17 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#倒排索引"><span class="toc-number">1.</span> <span class="toc-text">倒排索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TF-IDF"><span class="toc-number">2.</span> <span class="toc-text">TF-IDF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java实现"><span class="toc-number">3.</span> <span class="toc-text">java实现</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、倒排索引"><span class="toc-number">1.</span> <span class="toc-text">1、倒排索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、TF-IDF"><span class="toc-number">2.</span> <span class="toc-text">2、TF-IDF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、java实现"><span class="toc-number">3.</span> <span class="toc-text">3、java实现</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -188,7 +188,7 @@
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -201,7 +201,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -213,7 +213,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -235,11 +235,11 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -468,7 +468,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
