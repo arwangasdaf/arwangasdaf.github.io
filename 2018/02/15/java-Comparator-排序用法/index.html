@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>leetcode 775 Global and Local Inversions | wangtao</title>
+    <title>java Comparator 排序用法 | wangtao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wangtao">
     
 
     
-    <meta name="description" content="题意描述We have some permutation A of [0, 1, …, N - 1], where N is the length of A. The number of (global) inversions is the number of i &amp;lt; j with 0 &amp;lt;= i &amp;lt; j &amp;lt; N and A[i] &amp;gt; A[j]. The number">
+    <meta name="description" content="例子在刷leetcode时候，要用到给int的数组排序，于是很自然的想到用Arrays.sort来完成，然后很自然的写了下面这一段123456789public static int dominantIndex(int[] nums) &amp;#123;        Arrays.sort(nums,new Comparator&amp;lt;int&amp;gt;()&amp;#123;            @Overr">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 775 Global and Local Inversions">
-<meta property="og:url" content="http://wangtao.gift/2018/02/09/Global-and-Local-Inversions/index.html">
+<meta property="og:title" content="java Comparator 排序用法">
+<meta property="og:url" content="http://wangtao.gift/2018/02/15/java-Comparator-排序用法/index.html">
 <meta property="og:site_name" content="wangtao">
-<meta property="og:description" content="题意描述We have some permutation A of [0, 1, …, N - 1], where N is the length of A. The number of (global) inversions is the number of i &amp;lt; j with 0 &amp;lt;= i &amp;lt; j &amp;lt; N and A[i] &amp;gt; A[j]. The number">
-<meta property="og:updated_time" content="2018-02-09T07:54:17.000Z">
+<meta property="og:description" content="例子在刷leetcode时候，要用到给int的数组排序，于是很自然的想到用Arrays.sort来完成，然后很自然的写了下面这一段123456789public static int dominantIndex(int[] nums) &amp;#123;        Arrays.sort(nums,new Comparator&amp;lt;int&amp;gt;()&amp;#123;            @Overr">
+<meta property="og:updated_time" content="2018-02-15T08:19:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode 775 Global and Local Inversions">
-<meta name="twitter:description" content="题意描述We have some permutation A of [0, 1, …, N - 1], where N is the length of A. The number of (global) inversions is the number of i &amp;lt; j with 0 &amp;lt;= i &amp;lt; j &amp;lt; N and A[i] &amp;gt; A[j]. The number">
+<meta name="twitter:title" content="java Comparator 排序用法">
+<meta name="twitter:description" content="例子在刷leetcode时候，要用到给int的数组排序，于是很自然的想到用Arrays.sort来完成，然后很自然的写了下面这一段123456789public static int dominantIndex(int[] nums) &amp;#123;        Arrays.sort(nums,new Comparator&amp;lt;int&amp;gt;()&amp;#123;            @Overr">
 
     
     <link rel="alternative" href="/atom.xml" title="wangtao" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/02/09/Global-and-Local-Inversions/" title="leetcode 775 Global and Local Inversions" itemprop="url">leetcode 775 Global and Local Inversions</a>
+      <a href="/2018/02/15/java-Comparator-排序用法/" title="java Comparator 排序用法" itemprop="url">java Comparator 排序用法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wangtao" target="_blank" itemprop="author">wangtao</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-09T07:34:00.000Z" itemprop="datePublished"> Published 2018-02-09</time>
+    <time datetime="2018-02-15T07:45:00.000Z" itemprop="datePublished"> Published 2018-02-15</time>
     
   </p>
 </header>
@@ -97,28 +97,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译："><span class="toc-number">2.</span> <span class="toc-text">题意翻译：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路："><span class="toc-number">3.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考："><span class="toc-number">4.</span> <span class="toc-text">代码参考：</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#例子"><span class="toc-number">1.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#改进"><span class="toc-number">2.</span> <span class="toc-text">改进</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Comparator-方法详解"><span class="toc-number">3.</span> <span class="toc-text">Comparator 方法详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#逆序比较器"><span class="toc-number">4.</span> <span class="toc-text">逆序比较器</span></a></li></ol>
 		
 		</div>
 		
-		<h4 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a>题意描述</h4><p>We have some permutation A of [0, 1, …, N - 1], where N is the length of A.</p>
-<p>The number of (global) inversions is the number of i &lt; j with 0 &lt;= i &lt; j &lt; N and A[i] &gt; A[j].</p>
-<p>The number of local inversions is the number of i with 0 &lt;= i &lt; N and A[i] &gt; A[i+1].</p>
-<p>Return true if and only if the number of global inversions is equal to the number of local inversions.</p>
-<p>Example 1:<br><br>Input: A = [1,0,2]<br><br>Output: true<br><br>Explanation: There is 1 global inversion, and 1 local inversion.</p>
-<p>Example 2:<br><br>Input: A = [1,2,0]<br><br>Output: false<br><br>Explanation: There are 2 global inversions, and 1 local inversion.</p>
-<p>Note:<br><br>1、A will be a permutation of [0, 1, …, A.length - 1].<br><br>2、A will have length in range [1, 5000].<br><br>3、The time limit for this problem has been reduced.<br></p>
-<h4 id="题意翻译："><a href="#题意翻译：" class="headerlink" title="题意翻译："></a>题意翻译：<br></h4><p>给一个 0-N 全排列后的数组的乱序，定义两种逆序对，第一种叫做全局逆序对，另外一种叫做局部逆序对，分别给出了这两种逆序对的定义。然后判断给定数组里两种逆序对的个数是否相同。<br></p>
-<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：<br></h4><p>可以从题意里看出，全局逆序对的个数是大于等于局部逆序对的，相等的情况是全部是局部逆序对，这时是不会出现 A[i] &gt; A[i+2] 的。以此为判断条件，可想出 O(n) 的算法解决，<br></p>
-<h4 id="代码参考："><a href="#代码参考：" class="headerlink" title="代码参考："></a>代码参考：<br></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isIdealPermutation(int[] A) &#123;</span><br><span class="line">        /*</span><br><span class="line">         * 基本思路：</span><br><span class="line">         * 1、求 global inversion</span><br><span class="line">         * 2、求 local inversion (其中 global &gt;= local)</span><br><span class="line">         * 3、判断 global inversion == local inversion</span><br><span class="line">         */</span><br><span class="line"></span><br><span class="line">        int len = A.length;</span><br><span class="line"></span><br><span class="line">        int max = 0;</span><br><span class="line">        </span><br><span class="line">        for(int i=0 ; i&lt;len-2 ; i++)&#123;</span><br><span class="line">            max = Math.max(max , A[i]);</span><br><span class="line">            if (max &gt; A[i+2]) return false;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+		<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>在刷leetcode时候，要用到给int的数组排序，于是很自然的想到用Arrays.sort来完成，然后很自然的写了下面这一段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static int dominantIndex(int[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums,new Comparator&lt;int&gt;()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            public int compare(int o1, int o2) &#123;</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是编译器一直报错，显示 Type argument cant be of primitive type。折腾了一会才发现这种排序方式不支持 int,double,char 等基本类型，所以报这个错，也是长时间不用都忘了有这个说法了。既然用到了下面讲一下该方式实现排序的正解。</p>
+<h4 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h4><p>刚才这个任务是要完成对 int 类型的数组从大到小排序，这里直接调用排序api好像是不可以的，那么直接按正常排序后直接逆序取就好了。。。。</p>
+<h4 id="Comparator-方法详解"><a href="#Comparator-方法详解" class="headerlink" title="Comparator 方法详解"></a>Comparator 方法详解</h4><p>Comparator 是 java 的用于排序的接口，默认得实现一个 compare 函数，这个函数返回的参数有 -1 ， 1  ，0 正常来说按照返回值为 -1 进行排序。<br>下面有一个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // 注意，要想改变默认的排列顺序，不能使用基本类型（int,double, char）</span><br><span class="line">        // 而要使用它们对应的类</span><br><span class="line">        Integer[] a = &#123; 9, 8, 7, 2, 3, 4, 1, 0, 6, 5 &#125;;</span><br><span class="line">        // 定义一个自定义类MyComparator的对象</span><br><span class="line">        Comparator cmp = new MyComparator();</span><br><span class="line">        Arrays.sort(a, cmp);</span><br><span class="line">        for (int i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">            System.out.print(a[i] + &quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Comparator是一个接口</span><br><span class="line">//Comparator是一个比较器</span><br><span class="line">//Comparator中的compare可以将传入进行比对，按照返回的参数大于(1)等于(0)小于(-1)进行排序</span><br><span class="line">//默认情况下返回1的在后，返回-1的在前</span><br><span class="line">//如果我们需要逆序，只要把返回值-1和1的换位置即可。</span><br><span class="line">class MyComparator implements Comparator&lt;Integer&gt; &#123;</span><br><span class="line">    public int compare(Integer o1, Integer o2) &#123;</span><br><span class="line">        // 如果o1小于o2，我们就返回正值，如果n1大于n2我们就返回负值，</span><br><span class="line">        if (o1 &lt; o2) &#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125; else if (o1 &gt; o2) &#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="逆序比较器"><a href="#逆序比较器" class="headerlink" title="逆序比较器"></a>逆序比较器</h4><p>这里也可以利用Collections提供的reverseOrder()方法进行排序，具体的排序用法如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Integer[] A=&#123;10,23,42,12,20,6&#125;;</span><br><span class="line">        Arrays.sort(A,Collections.reverseOrder());</span><br><span class="line">        for(int a : A)&#123;</span><br><span class="line">            System.out.println(a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
-</div>
 
 
   <div class="article-tags">
@@ -132,7 +123,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wangtao.gift/2018/02/09/Global-and-Local-Inversions/" data-title="leetcode 775 Global and Local Inversions | wangtao" data-tsina="" class="share clearfix">
+	  <div data-url="http://wangtao.gift/2018/02/15/java-Comparator-排序用法/" data-title="java Comparator 排序用法 | wangtao" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +136,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/02/09/769-Max-Chunks-To-Make-Sorted/" title="leetcode 769 Max Chunks To Make Sorted">
-  <strong>上一篇：</strong><br/>
-  <span>
-  leetcode 769 Max Chunks To Make Sorted</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/02/01/java-实现倒排索引/"  title="java 实现倒排索引">
+<a href="/2018/02/14/leetcode-766-Toeplitz-Matrix/"  title="leetcode 766 Toeplitz Matrix">
  <strong>下一篇：</strong><br/> 
- <span>java 实现倒排索引
+ <span>leetcode 766 Toeplitz Matrix
 </span>
 </a>
 </div>
@@ -174,7 +157,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译："><span class="toc-number">2.</span> <span class="toc-text">题意翻译：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路："><span class="toc-number">3.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考："><span class="toc-number">4.</span> <span class="toc-text">代码参考：</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#例子"><span class="toc-number">1.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#改进"><span class="toc-number">2.</span> <span class="toc-text">改进</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Comparator-方法详解"><span class="toc-number">3.</span> <span class="toc-text">Comparator 方法详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#逆序比较器"><span class="toc-number">4.</span> <span class="toc-text">逆序比较器</span></a></li></ol>
  
   </div>
 
