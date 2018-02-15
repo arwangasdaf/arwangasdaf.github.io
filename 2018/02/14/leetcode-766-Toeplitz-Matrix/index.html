@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | wangtao</title>
+    <title>leetcode 766 Toeplitz Matrix | wangtao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wangtao">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="题意描述A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.Now given an M x N matrix, return True if and only if the matrix is Toeplitz. Example 1:Input: matrix = [[">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wangtao.gift/2018/01/31/hello-world/index.html">
+<meta property="og:title" content="leetcode 766 Toeplitz Matrix">
+<meta property="og:url" content="http://wangtao.gift/2018/02/14/leetcode-766-Toeplitz-Matrix/index.html">
 <meta property="og:site_name" content="wangtao">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-01-31T12:01:01.000Z">
+<meta property="og:description" content="题意描述A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.Now given an M x N matrix, return True if and only if the matrix is Toeplitz. Example 1:Input: matrix = [[">
+<meta property="og:updated_time" content="2018-02-15T06:46:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="leetcode 766 Toeplitz Matrix">
+<meta name="twitter:description" content="题意描述A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.Now given an M x N matrix, return True if and only if the matrix is Toeplitz. Example 1:Input: matrix = [[">
 
     
     <link rel="alternative" href="/atom.xml" title="wangtao" type="application/atom+xml">
@@ -80,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/01/31/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2018/02/14/leetcode-766-Toeplitz-Matrix/" title="leetcode 766 Toeplitz Matrix" itemprop="url">leetcode 766 Toeplitz Matrix</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wangtao" target="_blank" itemprop="author">wangtao</a>
 		
   <p class="article-time">
-    <time datetime="2018-01-31T12:01:01.000Z" itemprop="datePublished"> Published 2018-01-31</time>
+    <time datetime="2018-02-14T15:29:00.000Z" itemprop="datePublished"> Published 2018-02-14</time>
     
   </p>
 </header>
@@ -96,24 +97,30 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译"><span class="toc-number">2.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考"><span class="toc-number">3.</span> <span class="toc-text">代码参考</span></a></li></ol>
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+		<h4 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a>题意描述</h4><p>A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.Now given an M x N matrix, return True if and only if the matrix is Toeplitz.</p>
+<p>Example 1:<br><br>Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]<br>Output: True<br>Explanation:<br>1234<br><br>5123<br><br>9512<br><br>In the above grid, the diagonals are “[9]”, “[5, 5]”, “[1, 1, 1]”, “[2, 2, 2]”, “[3, 3]”, “[4]”, and in each diagonal all elements are the same, so the answer is True.<br><br>Example 2:<br><br>Input: matrix = [[1,2],[2,2]]<br>Output: False<br>Explanation:<br>The diagonal “[1, 2]” has different elements.<br><br>Note:<br><br>1、matrix will be a 2D array of integers.<br><br>2、matrix will have a number of rows and columns in range [1, 20].<br><br>3、matrix[i][j] will be integers in range [0, 99].<br></p>
+<h4 id="题意翻译"><a href="#题意翻译" class="headerlink" title="题意翻译"></a>题意翻译</h4><p>这道题是解决一个叫做托普利茨矩阵的问题。Toeplitz矩阵（diagonal-constant matrix），指矩阵中每条自左上至右下的斜线上的元素相同。<br>这道题解法还是很简单的，可以通过直接遍历整个数组就可以完成，时间复杂度为 O(n2),空间复杂度为 O(1),然后 leetcode官方给了另一种非最优的解决方法，这种方法通过利用矩阵的特点来实现，就是斜线上的元素的共同特点是横纵坐标的差的绝对值是相同的，这样的话我们就可以利用hash的方法来实现。<br></p>
+<h4 id="代码参考"><a href="#代码参考" class="headerlink" title="代码参考"></a>代码参考</h4><p>第一种<br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    // 判断对角线上的元素是否相等</span><br><span class="line">    public boolean isToeplitzMatrix(int[][] matrix) &#123;</span><br><span class="line">        int row = matrix.length;</span><br><span class="line">        int col = matrix[0].length;</span><br><span class="line">        for(int i=0 ; i&lt;row-1 ; i++)&#123;</span><br><span class="line">            for(int j=0 ; j&lt;col-1 ; j++)&#123;</span><br><span class="line">                if(matrix[i][j] != matrix[i+1][j+1])&#123;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><br><br>第二种<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isToeplitzMatrix(int[][] matrix) &#123;</span><br><span class="line">        HashMap&lt;Integer , Integer&gt; map = new HashMap();</span><br><span class="line">        for(int i=0 ; i&lt;matrix.length ; i++)&#123;</span><br><span class="line">            for(int j=0 ; j&lt;matrix[0].length ; j++)&#123;</span><br><span class="line">                if(!map.containsKey(j-i))&#123;</span><br><span class="line">                    map.put(j-i , matrix[i][j]);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    if(map.get(j-i) != matrix[i][j])&#123;</span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/java/">java</a>
+  </div>
 
 </div>
 
@@ -121,7 +128,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wangtao.gift/2018/01/31/hello-world/" data-title="Hello World | wangtao" data-tsina="" class="share clearfix">
+	  <div data-url="http://wangtao.gift/2018/02/14/leetcode-766-Toeplitz-Matrix/" data-title="leetcode 766 Toeplitz Matrix | wangtao" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -134,14 +141,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/02/01/java-实现倒排索引/" title="java 实现倒排索引">
-  <strong>上一篇：</strong><br/>
-  <span>
-  java 实现倒排索引</span>
+
+<div class="next">
+<a href="/2018/02/10/leetcode-768-Max-Chunks-To-Make-Sorted-II/"  title="leetcode 768 Max Chunks To Make Sorted II">
+ <strong>下一篇：</strong><br/> 
+ <span>leetcode 768 Max Chunks To Make Sorted II
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -155,7 +162,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译"><span class="toc-number">2.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考"><span class="toc-number">3.</span> <span class="toc-text">代码参考</span></a></li></ol>
  
   </div>
 
