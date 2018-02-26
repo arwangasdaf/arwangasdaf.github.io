@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | wangtao</title>
+    <title>leetcode 729 My Calendar I | wangtao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wangtao">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="题意描述题的意思大概是持续给你一些 [start,end)的区间，然后让你判断这些区间是否有重叠。样例：MyCalendar();MyCalendar.book(10, 20); // returns trueMyCalendar.book(15, 25); // returns falseMyCalendar.book(20, 30); // returns true 解题思路这道题可以简单的用">
+<meta name="keywords" content="java,TreeMap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wangtao.gift/2018/01/31/hello-world/index.html">
+<meta property="og:title" content="leetcode 729 My Calendar I">
+<meta property="og:url" content="http://wangtao.gift/2018/02/26/leetcode-729-My-Calendar-I/index.html">
 <meta property="og:site_name" content="wangtao">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-01-31T12:01:01.000Z">
+<meta property="og:description" content="题意描述题的意思大概是持续给你一些 [start,end)的区间，然后让你判断这些区间是否有重叠。样例：MyCalendar();MyCalendar.book(10, 20); // returns trueMyCalendar.book(15, 25); // returns falseMyCalendar.book(20, 30); // returns true 解题思路这道题可以简单的用">
+<meta property="og:updated_time" content="2018-02-26T12:52:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="leetcode 729 My Calendar I">
+<meta name="twitter:description" content="题意描述题的意思大概是持续给你一些 [start,end)的区间，然后让你判断这些区间是否有重叠。样例：MyCalendar();MyCalendar.book(10, 20); // returns trueMyCalendar.book(15, 25); // returns falseMyCalendar.book(20, 30); // returns true 解题思路这道题可以简单的用">
 
     
     <link rel="alternative" href="/atom.xml" title="wangtao" type="application/atom+xml">
@@ -80,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/01/31/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2018/02/26/leetcode-729-My-Calendar-I/" title="leetcode 729 My Calendar I" itemprop="url">leetcode 729 My Calendar I</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wangtao" target="_blank" itemprop="author">wangtao</a>
 		
   <p class="article-time">
-    <time datetime="2018-01-31T12:01:01.000Z" itemprop="datePublished"> 发表于 2018-01-31</time>
+    <time datetime="2018-02-26T06:51:00.000Z" itemprop="datePublished"> 发表于 2018-02-26</time>
     
   </p>
 </header>
@@ -96,24 +97,33 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考如下："><span class="toc-number">3.</span> <span class="toc-text">代码参考如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分搜索解法"><span class="toc-number">4.</span> <span class="toc-text">二分搜索解法</span></a></li></ol>
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+		<h4 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a>题意描述</h4><p>题的意思大概是持续给你一些 [start,end)的区间，然后让你判断这些区间是否有重叠。<br>样例：<br><br>MyCalendar();<br><br>MyCalendar.book(10, 20); // returns true<br><br>MyCalendar.book(15, 25); // returns false<br><br>MyCalendar.book(20, 30); // returns true</p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题可以简单的用遍历的方法来解决。但不采用这种方法。这里需要用到TreeMap这种数据结构。TreeMap是一种基于红黑树实现的经过排序的Map。<br>这里用到它的floorKey和ceilingKey两个特殊的方法。</p>
+<ul>
+<li>floorKey(target)方法返回当前Map里小于target的key的最大值。</li>
+<li>ceilingKey(target)返回当前Map里大于target的key的最小值。</li>
+</ul>
+<h4 id="代码参考如下："><a href="#代码参考如下：" class="headerlink" title="代码参考如下："></a>代码参考如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class MyCalendar &#123;</span><br><span class="line">        // treemap</span><br><span class="line">        TreeMap&lt;Integer , Integer&gt; treemap;</span><br><span class="line">        public MyCalendar() &#123;</span><br><span class="line">            treemap = new TreeMap&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        public boolean book(int start, int end) &#123;</span><br><span class="line">            Integer floorKey = treemap.floorKey(start);</span><br><span class="line">            if (floorKey != null &amp;&amp; treemap.get(floorKey) &gt; start) </span><br><span class="line">                return false;</span><br><span class="line">            Integer ceilingKey = treemap.ceilingKey(start);</span><br><span class="line">            if (ceilingKey != null &amp;&amp; ceilingKey &lt; end) return false;</span><br><span class="line">            treemap.put(start , end);</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">/**</span><br><span class="line"> * Your MyCalendar object will be instantiated and called as such:</span><br><span class="line"> * MyCalendar obj = new MyCalendar();</span><br><span class="line"> * boolean param_1 = obj.book(start,end);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<h4 id="二分搜索解法"><a href="#二分搜索解法" class="headerlink" title="二分搜索解法"></a>二分搜索解法</h4><p>这里还有一种利用二分搜索的解法。这里利用了LinkList的特点，当调用LinkList的add(index , number)的方法的时候，当index重复的时候会发生index偏移。参考代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class MyCalendar &#123;</span><br><span class="line">    List&lt;int[]&gt; bookings;</span><br><span class="line">    public MyCalendar() &#123;</span><br><span class="line">        bookings=new LinkedList&lt;&gt;();</span><br><span class="line">    &#125;    </span><br><span class="line">    public boolean book(int start, int end) &#123;</span><br><span class="line">        int s=0, e=bookings.size()-1;</span><br><span class="line">        while (s&lt;=e)&#123;</span><br><span class="line">            int mid=s+(e-s)/2;</span><br><span class="line">            int[] bk=bookings.get(mid);</span><br><span class="line">            if (bk[0]==start)&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;else if (bk[0]&gt;start)&#123;</span><br><span class="line">                e=mid-1;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                s=mid+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (s&gt;0 &amp;&amp; start&lt;bookings.get(s-1)[1])</span><br><span class="line">            return false;</span><br><span class="line">        if (s&lt;bookings.size() &amp;&amp; end&gt;bookings.get(s)[0])</span><br><span class="line">            return false;</span><br><span class="line">        bookings.add(s, new int[]&#123;start, end&#125;);</span><br><span class="line">        return true;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * Your MyCalendar object will be instantiated and called as such:</span><br><span class="line"> * MyCalendar obj = new MyCalendar();</span><br><span class="line"> * boolean param_1 = obj.book(start,end);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/java/">java</a><a href="/tags/TreeMap/">TreeMap</a>
+  </div>
 
 </div>
 
@@ -121,7 +131,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wangtao.gift/2018/01/31/hello-world/" data-title="Hello World | wangtao" data-tsina="" class="share clearfix">
+	  <div data-url="http://wangtao.gift/2018/02/26/leetcode-729-My-Calendar-I/" data-title="leetcode 729 My Calendar I | wangtao" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -134,14 +144,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/02/01/java-实现倒排索引/" title="java 实现倒排索引">
-  <strong>上一篇：</strong><br/>
-  <span>
-  java 实现倒排索引</span>
+
+<div class="next">
+<a href="/2018/02/16/leetcode-746-Min-Cost-Climbing-Stairs/"  title="leetcode 746 Min Cost Climbing Stairs">
+ <strong>下一篇：</strong><br/> 
+ <span>leetcode 746 Min Cost Climbing Stairs
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -155,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考如下："><span class="toc-number">3.</span> <span class="toc-text">代码参考如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分搜索解法"><span class="toc-number">4.</span> <span class="toc-text">二分搜索解法</span></a></li></ol>
  
   </div>
 
