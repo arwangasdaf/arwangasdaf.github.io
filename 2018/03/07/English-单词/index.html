@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>leetcode 769 Max Chunks To Make Sorted | wangtao</title>
+    <title>English 单词 | wangtao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wangtao">
     
 
     
-    <meta name="description" content="题意描述Given an array arr that is a permutation of [0, 1, …, arr.length - 1], we split the array into some number of “chunks” (partitions), and individually sort each chunk.  After concatenating them, th">
-<meta name="keywords" content="java">
+    <meta name="description" content="第一天Autumn 秋天cousin (同辈兄弟姐）nephew (男性晚辈) 以下动词加-ed或-ing要双写最后字母 regret (regretted, regretting) 后悔 control (controlled, controlling控制admit (admitted, admitting) 承认  occur (occurred, occurring) 出现prefer (p">
+<meta name="keywords" content="English">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 769 Max Chunks To Make Sorted">
-<meta property="og:url" content="http://wangtao.gift/2018/02/09/769-Max-Chunks-To-Make-Sorted/index.html">
+<meta property="og:title" content="English 单词">
+<meta property="og:url" content="http://wangtao.gift/2018/03/07/English-单词/index.html">
 <meta property="og:site_name" content="wangtao">
-<meta property="og:description" content="题意描述Given an array arr that is a permutation of [0, 1, …, arr.length - 1], we split the array into some number of “chunks” (partitions), and individually sort each chunk.  After concatenating them, th">
-<meta property="og:updated_time" content="2018-02-09T09:25:33.000Z">
+<meta property="og:description" content="第一天Autumn 秋天cousin (同辈兄弟姐）nephew (男性晚辈) 以下动词加-ed或-ing要双写最后字母 regret (regretted, regretting) 后悔 control (controlled, controlling控制admit (admitted, admitting) 承认  occur (occurred, occurring) 出现prefer (p">
+<meta property="og:updated_time" content="2018-03-07T03:50:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode 769 Max Chunks To Make Sorted">
-<meta name="twitter:description" content="题意描述Given an array arr that is a permutation of [0, 1, …, arr.length - 1], we split the array into some number of “chunks” (partitions), and individually sort each chunk.  After concatenating them, th">
+<meta name="twitter:title" content="English 单词">
+<meta name="twitter:description" content="第一天Autumn 秋天cousin (同辈兄弟姐）nephew (男性晚辈) 以下动词加-ed或-ing要双写最后字母 regret (regretted, regretting) 后悔 control (controlled, controlling控制admit (admitted, admitting) 承认  occur (occurred, occurring) 出现prefer (p">
 
     
     <link rel="alternative" href="/atom.xml" title="wangtao" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/02/09/769-Max-Chunks-To-Make-Sorted/" title="leetcode 769 Max Chunks To Make Sorted" itemprop="url">leetcode 769 Max Chunks To Make Sorted</a>
+      <a href="/2018/03/07/English-单词/" title="English 单词" itemprop="url">English 单词</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wangtao" target="_blank" itemprop="author">wangtao</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-09T09:05:00.000Z" itemprop="datePublished"> Published 2018-02-09</time>
+    <time datetime="2018-03-07T03:43:00.000Z" itemprop="datePublished"> Published 2018-03-07</time>
     
   </p>
 </header>
@@ -97,30 +97,141 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译"><span class="toc-number">2.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结题思路"><span class="toc-number">3.</span> <span class="toc-text">结题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考："><span class="toc-number">4.</span> <span class="toc-text">代码参考：</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一天"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二天"><span class="toc-number">2.</span> <span class="toc-text">第二天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三天"><span class="toc-number">3.</span> <span class="toc-text">第三天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四天"><span class="toc-number">4.</span> <span class="toc-text">第四天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五天"><span class="toc-number">5.</span> <span class="toc-text">第五天</span></a></li></ol>
 		
 		</div>
 		
-		<h4 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a>题意描述<br></h4><p>Given an array arr that is a permutation of [0, 1, …, arr.length - 1], we split the array into some number of “chunks” (partitions), and individually sort each chunk.  After concatenating them, the result equals the sorted array.<br><br>What is the most number of chunks we could have made?</p>
-<p>Example 1:<br>Input: arr = [4,3,2,1,0]<br>Output: 1<br>Explanation:<br>Splitting into two or more chunks will not return the required result.<br>For example, splitting into [4, 3], [2, 1, 0] will result in [3, 4, 0, 1, 2], which isn’t sorted.<br><br>Example 2:<br>Input: arr = [1,0,2,3,4]<br>Output: 4</p>
-<p>Explanation:<br><br>We can split into two chunks, such as [1, 0], [2, 3, 4].<br>However, splitting into [1, 0], [2], [3], [4] is the highest number of chunks possible.</p>
-<p>Note:<br><br>arr will have length in range [1, 10].<br>arr[i] will be a permutation of [0, 1, …, arr.length - 1].<br><br></p>
-<h4 id="题意翻译"><a href="#题意翻译" class="headerlink" title="题意翻译"></a>题意翻译<br></h4><p>这里大概是说给一个大小为 N 的全排列后的数组，然后将这个数组分块，并对每一个块内的元素进行排序，并能保证每个块内的元素排序后拼接起来会得到原排序数组，求最大能分块的数量。</p>
-<h4 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路<br></h4><p>思路这里一开始我也没有什么好办法，后来受到启发可以用类似greed的方法来解决。我们在每个位置上保存该位置上的数和之前的数相比得到的最大值，然后将这个最大值和数组的下标来比较。有多少个相同的就可以分为多少个。<br>这里有一个例子：<br><br>original: 0, 2, 1, 4, 3, 5, 7, 6<br><br>max:&nbsp;&nbsp; &nbsp; &nbsp; 0, 2, 2, 4, 4, 5, 7, 7<br><br>sorted:&nbsp; &nbsp;0, 1, 2, 3, 4, 5, 6, 7<br><br>index:&nbsp; &nbsp; &nbsp;0, 1, 2, 3, 4, 5, 6, 7<br></p>
-<h4 id="代码参考："><a href="#代码参考：" class="headerlink" title="代码参考："></a>代码参考：<br></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxChunksToSorted(int[] arr) &#123;</span><br><span class="line">        // 基本思路 greedy , 先找出每个位置上的最大, 然后与排序后的数组比较</span><br><span class="line">        int max = 0;</span><br><span class="line">        int count = 0;</span><br><span class="line">        // travel the arr</span><br><span class="line">        for(int i=0 ; i&lt;arr.length ; i++)&#123;</span><br><span class="line">            max = Math.max(arr[i] , max);</span><br><span class="line">            if(max == i)&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+		<h3 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h3><p>Autumn 秋天<br><br>cousin (同辈兄弟姐）<br><br>nephew (男性晚辈) <br><br>以下动词加-ed或-ing要双写最后字母 <br><br>regret (regretted, regretting) 后悔 <br><br>control (controlled, controlling控制<br><br>admit (admitted, admitting) 承认  <br><br>occur (occurred, occurring) 出现<br><br>prefer (preferred, preferring) 宁愿 <br><br>refer (referred, referring) 提到 <br><br>forget (forgetting) 忘记 <br><br>permit (permitted, permitting) 允许 <br><br>equip (equipped, equipping) 装备<br><br>部分过去式和过去分词不规则变化的动词<br><br>broadcast (broadcast, broadcast) 广播 <br><br>flee (fled, fled) 逃跑 <br><br>forbid (forbade, forbidden) 禁止 <br><br>forgive (forgave, forgiven) 原谅 <br><br>freeze (froze, frozen) 结冰 <br><br>seek (sought, sought) 寻求<br><br>shake (shook, shaken) 发抖<br><br>sing (sang, sung) 唱歌 <br><br>sink (sank, sunk/sunken) 下沉<br><br>spread (spread, spread) 传播<br>swim (swam, swum) 游泳<br><br>tear (tore, torn) 撕碎  <br><br>weave (wove, woven) 编织<br></p>
+<h3 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h3><p>意思相近的词  </p>
+<ol>
+<li>check / examine/ test </li>
+<li>receive / accept </li>
+<li>destroy /damage   </li>
+<li>celebrate/ congratulate </li>
+<li>wear / dress<br>注意形容词变名词时的拼写变化 </li>
+<li>long—length 长度 </li>
+<li>wide—width 宽度 </li>
+<li>high—height 高度 </li>
+<li>strong—strength力量<br>以-ic结尾的动词，应先把-ic变为-ick，再加ing或ed<br>picnic (picnicked, picnicking) 野餐<br>个别名词的复数拼写  </li>
+<li>German (Germans) 德国人 </li>
+<li>gulf (gulfs) 海湾  </li>
+<li>handkerchief (handkerchiefs) 手帕 </li>
+<li>hero (英雄)，potato (土豆)，tomato (西 红柿) 等有生命的以-o结尾的名词变复数时要加-es。 </li>
+<li>roof (roofs) 房顶  </li>
+<li>stomach 胃 (其复数是stomachs而不是加es)<br>注意动词变名词时的拼写变化 </li>
+<li>succeed—success成功 </li>
+<li>pronounce—pronunciation 发音 </li>
+<li>explain—explanation解释 </li>
+<li>decide—decision 决定 </li>
+<li>enter—entrance进入 </li>
+<li>permit—permission 允许 </li>
+<li>refuse—refusal 拒绝  </li>
+<li>consider—consideration 考虑 </li>
+<li>discover—discovery 发现  </li>
+</ol>
+<h3 id="第三天"><a href="#第三天" class="headerlink" title="第三天"></a>第三天</h3><ol>
+<li>conclude—conclusion 得出结论 </li>
+<li>arrive—arrival 到达 </li>
+<li>weigh—weight 重量<br>注意形容词变副词时的拼写变化 </li>
+<li>beautiful—beautifully 美丽的 </li>
+<li>possible—possibly 可能的 </li>
+<li>practical—practically 实际的 </li>
+<li>particular—particularly 特别的 </li>
+<li>successful—successfully 成功的<br>其它必背单词 </li>
+<li>abroad 国外</li>
+<li>absence n. 缺席 (absent adj.) </li>
+<li>accepted (NMET1997)<br>4.accident事故 (accidental adj. 偶然的，accidentally adv. 偶然地) </li>
+<li>achievement成就 (achieve v. 获得) </li>
+<li>address地址 </li>
+<li>admire钦佩 </li>
+<li>admitting (2000北京春季卷) </li>
+<li>agreement 协议 </li>
+<li>agriculture农业 (agricultural adj. 农业的) </li>
+<li>altogether总共 </li>
+<li>ancient 古代的 </li>
+<li>announced(NMET1999)  </li>
+<li>anxiety 忧虑 (anxious adj. 焦急的，anxiously adv. 焦急地) </li>
+<li>apologize v. 道歉 (apology n. 道歉apologetic adj. 道歉的，apologetically adv.道歉地) </li>
+<li>apologize/apologise (2000全国卷) </li>
+<li>appreciate感激/欣赏 (感激人用thank  sb；谢谢某人做的事用appreciate sth.) </li>
+<li>Asian(NMET1996) </li>
+<li>assistant 助手  </li>
+</ol>
+<h3 id="第四天"><a href="#第四天" class="headerlink" title="第四天"></a>第四天</h3><ol>
+<li>astronaut 宇航员 </li>
+<li>atmosphere气氛  </li>
+<li>attempt尝试 (可作名词也可作动词) </li>
+<li>attentively 专心地  </li>
+<li>attentively(NMET1996) </li>
+<li>attitude 态度  </li>
+<li>attract 吸引 (attraction吸引力) </li>
+<li>average 平均  </li>
+<li>average(NMET1999) </li>
+<li>balance平衡  </li>
+<li>beauty 美 (beautiful)  </li>
+<li>believe相信 (belief n. 信念，其复数是beliefs)</li>
+<li>beyond超过 </li>
+<li>biology生物 </li>
+<li>birthday生日 </li>
+<li>bravery 勇敢  </li>
+<li>broadcast(NMET1996)  </li>
+<li>broadcast广播 (过去式、过去分词同原形)  </li>
+<li>carefully 小心 (carefully) </li>
+<li>ceiling天花板  </li>
+<li>celebrated (2000北京春季卷</li>
+<li>celebration 庆祝 (celebrate n. 庆祝) </li>
+<li>century 世纪 44. challenge 挑战 </li>
+<li>character 性格 </li>
+<li>charge收费 </li>
+</ol>
+<h3 id="第五天"><a href="#第五天" class="headerlink" title="第五天"></a>第五天</h3><ol>
+<li>cinema电影院  </li>
+<li>comfort v. &amp; n. 安慰 (comfortable adj. comfortably adv.舒适地) </li>
+<li>comfortably(NMET1997) </li>
+<li>comment 评论  </li>
+<li>communication 交流  </li>
+<li>competition 竞赛 (compete v. 竞赛competitor 竞赛者) </li>
+<li>composition 作文 </li>
+<li>concert 音乐会  </li>
+<li>conclude v. conclusion n. 结论 </li>
+<li>condition情况 (conditions条件) </li>
+<li>confessing (2000北京春季卷)  </li>
+<li>congratulations 祝贺 (congratulate v.) </li>
+<li>constantly 不断地  </li>
+<li>construction(NMET1996) </li>
+<li>continue继续  </li>
+<li>contribution 贡献 (contribute v.) </li>
+<li>conveniently方便 (convenient adj.) </li>
+<li>conversation 谈话 </li>
+<li>coughing(NMET1997) </li>
+<li>cousin表兄弟  </li>
+<li>cruelty 残酷 (cruel adj. cruelly adv.) </li>
+<li>curious 好奇 (curiosity n. 好奇) </li>
+<li>curious(NMET1996) </li>
+<li>customer 顾客  </li>
+<li>customers (2000北京春季卷) </li>
+<li>custom习俗 </li>
+<li>damage损坏  </li>
+<li>declared(NMET1999) </li>
+<li>delicious 美味  </li>
+<li>destroy毁灭 (其过去式是destroyed) </li>
+<li>determined 有决心的  </li>
+<li>develop发展 (development n. developing 发展中的，developed发达的)  </li>
+</ol>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+  <a class="article-category-link" href="/categories/English-word/">English word</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/java/">java</a>
+  <span></span> <a href="/tags/English/">English</a>
   </div>
 
 </div>
@@ -129,7 +240,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wangtao.gift/2018/02/09/769-Max-Chunks-To-Make-Sorted/" data-title="leetcode 769 Max Chunks To Make Sorted | wangtao" data-tsina="" class="share clearfix">
+	  <div data-url="http://wangtao.gift/2018/03/07/English-单词/" data-title="English 单词 | wangtao" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -142,19 +253,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/02/10/leetcode-768-Max-Chunks-To-Make-Sorted-II/" title="leetcode 768 Max Chunks To Make Sorted II">
-  <strong>上一篇：</strong><br/>
-  <span>
-  leetcode 768 Max Chunks To Make Sorted II</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/02/09/Global-and-Local-Inversions/"  title="leetcode 775 Global and Local Inversions">
+<a href="/2018/03/01/IntelliJ-本地跑spark问题/"  title="IntelliJ 本地跑spark问题">
  <strong>下一篇：</strong><br/> 
- <span>leetcode 775 Global and Local Inversions
+ <span>IntelliJ 本地跑spark问题
 </span>
 </a>
 </div>
@@ -171,7 +274,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意描述"><span class="toc-number">1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译"><span class="toc-number">2.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结题思路"><span class="toc-number">3.</span> <span class="toc-text">结题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考："><span class="toc-number">4.</span> <span class="toc-text">代码参考：</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一天"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二天"><span class="toc-number">2.</span> <span class="toc-text">第二天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三天"><span class="toc-number">3.</span> <span class="toc-text">第三天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四天"><span class="toc-number">4.</span> <span class="toc-text">第四天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五天"><span class="toc-number">5.</span> <span class="toc-text">第五天</span></a></li></ol>
  
   </div>
 
