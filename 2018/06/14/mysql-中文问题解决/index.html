@@ -4,24 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>leetcode 747 Largest Number At Least Twice of Others | wangtao</title>
+    <title>mysql 中文问题解决 | wangtao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="wangtao">
     
 
     
-    <meta name="description" content="题意In a given integer array nums, there is always exactly one largest element. Find whether the largest element in the array is at least twice as much as every other number in the array. If it is, retu">
-<meta name="keywords" content="java">
+    <meta name="description" content="问题描述在安装完 mysql 后很多人都会遇到这样一个问题，就是向mysql里写数据的时候会发生中文无法显示（显示一连串问号的问题） 问题解决这个问题可以通过修改mysql的配置文件来完成，Linux平台下的配置文件为my.cnf文件，windows平台下的配置文件为my.ini文件。 1、使用1mysql -u root -p 进入当前mysql的命令行界面，按提示输入root的password">
+<meta name="keywords" content="Error">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 747 Largest Number At Least Twice of Others">
-<meta property="og:url" content="http://wangtao.gift/2018/02/16/leetcode-747-Largest-Number-At-Least-Twice-of-Others/index.html">
+<meta property="og:title" content="mysql 中文问题解决">
+<meta property="og:url" content="http://wangtao.gift/2018/06/14/mysql-中文问题解决/index.html">
 <meta property="og:site_name" content="wangtao">
-<meta property="og:description" content="题意In a given integer array nums, there is always exactly one largest element. Find whether the largest element in the array is at least twice as much as every other number in the array. If it is, retu">
-<meta property="og:updated_time" content="2018-02-16T13:05:47.000Z">
+<meta property="og:description" content="问题描述在安装完 mysql 后很多人都会遇到这样一个问题，就是向mysql里写数据的时候会发生中文无法显示（显示一连串问号的问题） 问题解决这个问题可以通过修改mysql的配置文件来完成，Linux平台下的配置文件为my.cnf文件，windows平台下的配置文件为my.ini文件。 1、使用1mysql -u root -p 进入当前mysql的命令行界面，按提示输入root的password">
+<meta property="og:image" content="http://wangtao.gift/image/1/mysql.png">
+<meta property="og:image" content="http://wangtao.gift/image/1/mysqld.png">
+<meta property="og:updated_time" content="2018-06-14T13:20:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode 747 Largest Number At Least Twice of Others">
-<meta name="twitter:description" content="题意In a given integer array nums, there is always exactly one largest element. Find whether the largest element in the array is at least twice as much as every other number in the array. If it is, retu">
+<meta name="twitter:title" content="mysql 中文问题解决">
+<meta name="twitter:description" content="问题描述在安装完 mysql 后很多人都会遇到这样一个问题，就是向mysql里写数据的时候会发生中文无法显示（显示一连串问号的问题） 问题解决这个问题可以通过修改mysql的配置文件来完成，Linux平台下的配置文件为my.cnf文件，windows平台下的配置文件为my.ini文件。 1、使用1mysql -u root -p 进入当前mysql的命令行界面，按提示输入root的password">
+<meta name="twitter:image" content="http://wangtao.gift/image/1/mysql.png">
 
     
     <link rel="alternative" href="/atom.xml" title="wangtao" type="application/atom+xml">
@@ -81,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/02/16/leetcode-747-Largest-Number-At-Least-Twice-of-Others/" title="leetcode 747 Largest Number At Least Twice of Others" itemprop="url">leetcode 747 Largest Number At Least Twice of Others</a>
+      <a href="/2018/06/14/mysql-中文问题解决/" title="mysql 中文问题解决" itemprop="url">mysql 中文问题解决</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="wangtao" target="_blank" itemprop="author">wangtao</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-16T12:03:00.000Z" itemprop="datePublished"> 发表于 2018-02-16</time>
+    <time datetime="2018-06-14T12:56:00.000Z" itemprop="datePublished"> 发表于 2018-06-14</time>
     
   </p>
 </header>
@@ -97,30 +100,44 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译"><span class="toc-number">2.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考"><span class="toc-number">3.</span> <span class="toc-text">代码参考</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问题解决"><span class="toc-number">2.</span> <span class="toc-text">问题解决</span></a></li></ol>
 		
 		</div>
 		
-		<h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>In a given integer array nums, there is always exactly one largest element.</p>
-<p>Find whether the largest element in the array is at least twice as much as every other number in the array.</p>
-<p>If it is, return the index of the largest element, otherwise return -1.</p>
-<p>Example 1:<br>Input: nums = [3, 6, 1, 0]<br><br>Output: 1<br><br>Explanation: 6 is the largest integer, and for every other number in the array x,<br>6 is more than twice as big as x.  The index of value 6 is 1, so we return 1.</p>
-<p>Example 2:<br>Input: nums = [1, 2, 3, 4]<br><br>Output: -1<br><br>Explanation: 4 isn’t at least as big as twice the value of 3, so we return -1.<br><br></p>
-<h4 id="题意翻译"><a href="#题意翻译" class="headerlink" title="题意翻译"></a>题意翻译</h4><p>这个题的意思是说给定一个整数数组，让你找到这个数组里的最大值max和第二大secondMax的值，然后判断max是否比secondMax的二倍还要大。这里的工作是要找到第一大的数和第二大的数，然后保留第一大的数的下标。可以通过遍历一遍数组然后用三个变量分别记录最大值，第二大值，和第一大的数的下标。<br><br></p>
-<h4 id="代码参考"><a href="#代码参考" class="headerlink" title="代码参考"></a>代码参考</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int dominantIndex(int[] nums) &#123;</span><br><span class="line">        if (nums.length == 0 || nums == null)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nums.length == 1)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int maxValue = Integer.MIN_VALUE + 1;</span><br><span class="line">        int SecondMaxValue = Integer.MIN_VALUE;</span><br><span class="line">        int index = 0;</span><br><span class="line">        for (int i=0 ; i&lt;nums.length ; i++)&#123;</span><br><span class="line">            if (nums[i] &gt; maxValue)&#123;</span><br><span class="line">                SecondMaxValue = maxValue;</span><br><span class="line">                maxValue = nums[i];</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;else if (nums[i] != maxValue &amp;&amp; nums[i] &gt; SecondMaxValue)&#123;</span><br><span class="line">                SecondMaxValue = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (maxValue &gt;= 2*SecondMaxValue)&#123;</span><br><span class="line">            return index;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+		<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>在安装完 mysql 后很多人都会遇到这样一个问题，就是向mysql里写数据的时候会发生中文无法显示（显示一连串问号的问题）</p>
+<h4 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h4><p>这个问题可以通过修改mysql的配置文件来完成，Linux平台下的配置文件为my.cnf文件，windows平台下的配置文件为my.ini文件。</p>
+<p>1、使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+<p>进入当前mysql的命令行界面，按提示输入root的password，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;character%&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>显示</p>
+<p><img src="/image/1/mysql.png" style="display:block;margin:auto"></p>
+<p>可以看到其中有几个是latin1，我们需要将这几项改掉</p>
+<p>2、打开my.cnf 向里面添加以下内容</p>
+<p>[client]</p>
+<p>default-character-set=utf8</p>
+<p>[mysqld]</p>
+<p>default-storage-engine=INNODB<br><br>character-set-server=utf8<br><br>collation-server=utf8_general_ci</p>
+<p>3、重启mysql<br>使用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -uroot -p shutdown</span><br></pre></td></tr></table></figure></p>
+<p>先关闭mysql，然后使用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --user root &amp;</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --user mysql &amp;</span><br></pre></td></tr></table></figure></p>
+<p>启动集群</p>
+<p>4、重新进入mysql界面，使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;character%&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>会出现</p>
+<p><img src="/image/1/mysqld.png" style="display:block;margin:auto"></p>
+<p>可以看到字符集改变成功，此时应该可以解决无法写汉字的问题了</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+  <a class="article-category-link" href="/categories/mysql/">mysql</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/java/">java</a>
+  <span></span> <a href="/tags/Error/">Error</a>
   </div>
 
 </div>
@@ -129,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://wangtao.gift/2018/02/16/leetcode-747-Largest-Number-At-Least-Twice-of-Others/" data-title="leetcode 747 Largest Number At Least Twice of Others | wangtao" data-tsina="" class="share clearfix">
+	  <div data-url="http://wangtao.gift/2018/06/14/mysql-中文问题解决/" data-title="mysql 中文问题解决 | wangtao" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -142,19 +159,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/02/16/leetcode-746-Min-Cost-Climbing-Stairs/" title="leetcode 746 Min Cost Climbing Stairs">
-  <strong>上一篇：</strong><br/>
-  <span>
-  leetcode 746 Min Cost Climbing Stairs</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/02/15/java-Comparator-排序用法/"  title="java Comparator 排序用法">
+<a href="/2018/03/07/English-单词/"  title="English 单词">
  <strong>下一篇：</strong><br/> 
- <span>java Comparator 排序用法
+ <span>English 单词
 </span>
 </a>
 </div>
@@ -171,7 +180,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题意翻译"><span class="toc-number">2.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码参考"><span class="toc-number">3.</span> <span class="toc-text">代码参考</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问题解决"><span class="toc-number">2.</span> <span class="toc-text">问题解决</span></a></li></ol>
  
   </div>
 
